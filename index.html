@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+            attendance roster
+        </title>
+    </head>
+    <body>
+        <center>
+            <h1>
+                Names of the Students
+            </h1>
+    <div>
+        <span>1.</span>
+        <input type="text" placeholder="Enter student name" id="student_1">
+        <br>
+        <br>
+        <span>2.</span>
+        <input type="text" placeholder="Enter student name" id="student_2">
+        <br>
+        <br>
+        <span>3.</span>
+        <input type="text" placeholder="Enter student name" id="student_3">
+        <br>
+        <br>
+        <span>4.</span>
+        <input type="text" placeholder="Enter student name" id="student_4">
+        <br>
+        <br>
+    </div>
+    <button id="submit" onclick="submit()">
+        Submit
+    </button>
+    <div id="display_name" style="font-weight: bold;"></div>
+    <button id="sort" onclick="sort()" style="display:none;"  >
+        Sort
+    </button>
+        </center>
+    </body>
+    <script>
+ students=[];
+ function submit (){
+     var name_1=document.getElementById("student_1").value;
+     var name_2=document.getElementById("student_2").value;
+     var name_3=document.getElementById("student_3").value;
+     var name_4=document.getElementById("student_4").value;
+
+students.push(name_1);
+students.push(name_2);
+students.push(name_3);
+students.push(name_4);
+console.log(students);
+
+document.getElementById("display_name").innerHTML=students;
+document.getElementById("submit").style.display="none";
+document.getElementById("sort").style.display="inline-block";  
+
+ }
+ function sort(){
+students.sort();
+console.log(students);
+document.getElementById("display_name").innerHTML=students;
+ }
+        </script>
+
+</html>
